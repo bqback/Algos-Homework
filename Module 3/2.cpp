@@ -136,6 +136,8 @@ void task(std::istream& input_stream = std::cin,
     for (int i = 0; i < edge_count; i++) {
         int from, to;
         input_stream >> from >> to;
+        assertm(0 <= from && from < vertice_count, "'from' vertice out of bounds");
+        assertm(0 <= to && to < vertice_count, "'to' vertice out of bounds");
         graph.AddEdge(from, to);
         graph.AddEdge(to, from);
     }
